@@ -216,7 +216,7 @@ article #tab li:hover {
   border-bottom: 2px solid #d1d1d1;
 }
 
-#tab .active {
+#tab .navtab.active {
   opacity: 1;
   color: var(--primary);
   font-weight: bold;
