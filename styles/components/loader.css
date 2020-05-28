@@ -1,0 +1,115 @@
+:root {
+  --primary: #1d72aa;
+  --secondary: #eef6fc;
+}
+
+.overlay {
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  z-index: 9000;
+  display: flex;
+  opacity: 1;
+  transition: opacity 0.1s cubic-bezier(0.165, 0.84, 0.44, 1) 10ms,
+    z-index 0s 0s, visibility 0s 0s,
+    transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1) 10ms,
+    transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1) 10ms;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--secondary);
+  color: white;
+  box-sizing: inherit;
+}
+
+/*coffee cup*/
+.coffee_cup {
+  width: 20px;
+  height: 24px;
+  border: 1px solid var(--primary);
+  border-radius: 0px 0px 5px 5px;
+  position: relative;
+  margin: 36px auto;
+}
+.coffee_cup:after,
+.coffee_cup:before {
+  position: absolute;
+  content: "";
+}
+.coffee_cup:after {
+  width: 5px;
+  height: 12px;
+  border: 1px solid var(--primary);
+  border-left: none;
+  border-radius: 0px 20px 20px 0px;
+  left: 20px;
+}
+.coffee_cup:before {
+  width: 1px;
+  height: 6px;
+  background-color: var(--primary);
+  top: -10px;
+  left: 4px;
+  box-shadow: 5px 0px 0px 0px var(--primary), 5px -5px 0px 0px var(--primary),
+    10px 0px 0px 0px var(--primary);
+  -webkit-animation: steam 1s linear infinite alternate;
+  -moz-animation: steam 1s linear infinite alternate;
+  animation: steam 1s linear infinite alternate;
+}
+
+@-webkit-keyframes steam {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 6px;
+  }
+}
+@-moz-keyframes steam {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 6px;
+  }
+}
+@keyframes steam {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 6px;
+  }
+}
+
+@keyframes hide {
+  0% {
+    display: block;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes nothing {
+  0% {
+    opacity: 0;
+    display: none;
+    height: 0;
+    width: 0;
+    transform: unset;
+    position: unset;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+    height: 0;
+    width: 0;
+    transform: unset;
+    position: unset;
+    visibility: hidden;
+  }
+}
